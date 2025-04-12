@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宠物喂食系统</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>宠物喂食系统</h1>
+            <p>随时为您的爱宠提供食物</p>
+        </header>
+        
+        <main>
+            <div class="feed-section">
+                <button id="feed-button" class="feed-btn">喂食</button>
+                <div id="status-message" class="status-message"></div>
+            </div>
+            
+            <div class="schedule-section">
+                <h2>喂食计划</h2>
+                <div class="schedule-list">
+                    <div class="schedule-item">08:00 - 已喂食</div>
+                    <div class="schedule-item">12:00 - 等待中</div>
+                    <div class="schedule-item">18:00 - 等待中</div>
+                </div>
+            </div>
+            
+            <div class="history-section">
+                <h2>喂食记录</h2>
+                <ul id="feed-history" class="history-list">
+                    <!-- 喂食记录将通过JavaScript动态添加 -->
+                </ul>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2023 宠物喂食系统 | 联系管理员: admin@example.com</p>
+        </footer>
+    </div>
+</body>
+</html>
