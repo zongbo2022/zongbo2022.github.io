@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能宠物喂食系统</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container py-4">
+        <header class="text-center mb-5">
+            <h1 class="display-4">智能宠物喂食系统</h1>
+            <p class="lead">远程控制您的宠物喂食器</p>
+            <div id="connection-status">
+                <span class="status-indicator offline"></span>
+                <span>设备离线</span>
+            </div>
+        </header>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">实时数据</h5>
+                    </div>
+                    <div class="card-body real-time-data">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <h6>当前重量</h6>
+                                <h3 id="current-weight">0 g</h3>
+                            </div>
+                            <div class="col-6">
+                                <h6>今日已喂</h6>
+                                <h3 id="today-fed">0 g</h3>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <h6>喂食进度</h6>
+                            <div class="progress">
+                                <div id="feeding-progress" class="progress-bar progress-bar-striped" 
+                                     role="progressbar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">立即喂食</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="feed-amount" class="form-label">喂食量 (克)</label>
+                            <input type="number" class="form-control" id="feed-amount" value="50" min="10" max="200">
+                        </div>
+                        <button id="feed-now-btn" class="btn btn-success w-100 py-3">
+                            <i class="bi bi-cup-straw"></i> 立即喂食
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">定时喂食设置</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="schedule-container">
+                            <!-- 定时喂食设置将通过JavaScript动态生成 -->
+                        </div>
+                        
+                        <button id="add-schedule-btn" class="btn btn-outline-primary mt-2">
+                            <i class="bi bi-plus"></i> 添加喂食时间
+                        </button>
+                        
+                        <button id="save-schedule-btn" class="btn btn-info mt-3 w-100">
+                            <i class="bi bi-save"></i> 保存所有设置
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">喂食记录</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>时间</th>
+                                        <th>类型</th>
+                                        <th>重量</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="feeding-history">
+                                    <!-- 喂食记录将通过JavaScript动态生成 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
